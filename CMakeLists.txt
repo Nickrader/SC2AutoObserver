@@ -15,8 +15,21 @@ set(BUILD_API_EXAMPLES OFF CACHE INTERNAL "" FORCE)
 # Disable building of tests in the cpp-sc2 submodule.
 set(BUILD_API_TESTS OFF CACHE INTERNAL "" FORCE)
 
+include(FetchContent)
+message(STATUS "FetchContent: googletest")
+
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG 9b12f749fa972d08703d8459e9bf3239617491ca
+)
+
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
 # Search for Google test suite.
-find_package(GTest REQUIRED)
+# //find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 if (MSVC)
