@@ -1,5 +1,4 @@
 There should be a programmatic way to do this, but I am beginner with cmake.  
-This could also be very wrong.  I was doing a lot of "let's try this."
 
 Build Commands: From project root folder (i.e. ~/sc2autoobserver $) :
 
