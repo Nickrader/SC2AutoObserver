@@ -38,7 +38,8 @@ if (MSVC)
 
     # Use statically linked runtime.
     #set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Debug>:Debug>)    
-	set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreadedDLL$<$<CONFIG:Debug>:Debug>)
+	set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Debug>:Debug>)
+	set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Release>:Release>)
 endif ()
 
 add_subdirectory("cpp-sc2")
