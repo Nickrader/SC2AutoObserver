@@ -30,14 +30,15 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 # Search for Google test suite.
 # //find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
+#include_directories(${GTEST_INCLUDE_DIRS})
 
 if (MSVC)
     # Setup MSVC parallelized builds.
     add_compile_options(/MP)
 
     # Use statically linked runtime.
-    set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Debug>:Debug>)
+    #set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Debug>:Debug>)    
+	set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreadedDLL$<$<CONFIG:Debug>:Debug>)
 endif ()
 
 add_subdirectory("cpp-sc2")
