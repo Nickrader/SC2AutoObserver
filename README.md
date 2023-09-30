@@ -31,7 +31,7 @@ The Sc2AutoObserver is used to view replays on the [SC2 AI Arena 24/7 livestream
 ### Windows (Visual Studio)
 ```bat
 :: Clone the project.
-$ git clone --recursive git@gitlab.com:aiarena/sc2autoobserver.git
+$ git clone --recursive git@github.com:Nickrader/SC2AutoObserver.git
 $ cd sc2autoobserver
 
 :: Create build directory.
