@@ -1,6 +1,10 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.15)
+
+cmake_policy(SET CMP0091 NEW)
 
 project(Observer)
+
+set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Debug>:Debug>)
 
 # Specify output directories.
 set(EXECUTABLE_OUTPUT_PATH "${PROJECT_BINARY_DIR}/bin")
@@ -28,16 +32,12 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 FetchContent_MakeAvailable(googletest)
-# Search for Google test suite.
-# //find_package(GTest REQUIRED)
-#include_directories(${GTEST_INCLUDE_DIRS})
+
+include_directories(${GTEST_INCLUDE_DIRS})
 
 if (MSVC)
     # Setup MSVC parallelized builds.
     add_compile_options(/MP)
-
-    # Use statically linked runtime.
-    set(CMAKE_MSVC_RUNTIME_LIBRARY MultiThreaded$<$<CONFIG:Debug>:Debug>)    
 endif ()
 
 add_subdirectory("cpp-sc2")

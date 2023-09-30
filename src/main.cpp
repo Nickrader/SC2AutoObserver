@@ -112,11 +112,8 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-		// seems somewhere speed is reversed. Lower number = faster.
-		//speed = 4.0f;
-		//std::cout << "Using default speed: 4x" << std::endl;
 		speed = 0.1f;
-		std::cout << "Using default speed: ?? (val:" << speed << ")" << std::endl;
+		std::cout << "Using default speed: (val:" << speed << ")" << std::endl;
 	}
 
 	long delay;

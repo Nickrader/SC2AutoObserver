@@ -1,6 +1,5 @@
-#include(GoogleTest)
-
 include_directories(${PROJECT_SOURCE_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/build/_deps/googletest-src/googlemock/include)
 
 add_executable(
     TestArgParser
@@ -9,4 +8,3 @@ add_executable(
     ArgParser.test.cpp)
 
 target_link_libraries(TestArgParser GTest::gtest_main)
-#gtest_discover_tests(TestArgParser)
