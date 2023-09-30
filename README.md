@@ -52,9 +52,9 @@ $ start Observer.sln
 :: Launch the observer. (based upon what you built in Visual Studio)
 :: e.g. bin\Debug\Observer.exe --Path "C:\Users\CoolUsername\Documents\StarCraft II\Accounts\84555555\1-S2-1-5555555\Replays\Multiplayer\Alcyone LE.SC2Replay" --Speed "0.25x"
 :: Release version
-$ bin/Release/Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
+$ bin\Release\Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
 :: Debug version
-$ bin/Debug/Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
+$ bin\Debug\Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
 ```
 
 ### OS X (Xcode)
