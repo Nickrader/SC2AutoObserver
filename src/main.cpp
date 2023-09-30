@@ -112,8 +112,8 @@ int main(int argc, char* argv[])
 	}
 	else
 	{
-		speed = 4.0f;
-		std::cout << "Using default speed: 4x" << std::endl;
+		speed = 0.1f;
+		std::cout << "Using default speed: (val:" << speed << ")" << std::endl;
 	}
 
 	long delay;
@@ -141,7 +141,7 @@ int main(int argc, char* argv[])
 	coordinator.AddReplayObserver(&replayObserver);
 	coordinator.SetReplayPerspective(0);
 	//coordinator.SetRealtime(true);
-	coordinator.SetFullScreen(1);
+	//coordinator.SetFullScreen(1);
 	while (true)
 	{
 		bool isDirectory = loadReplayPaths(replayPath, replayFiles);

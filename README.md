@@ -1,5 +1,9 @@
 # Sc2AutoObserver
 
+## Known Issues:
+Seems to be having problems (crashing) with replays from prior 'versions' of Starcraft II client.
+9/29/2023
+
 ## About
 Starcraft 2 replays auto observer inspired by the [SSCAIT-ObserverModule](https://github.com/Plankton555/SSCAIT-ObserverModule).  
 The Sc2AutoObserver is used to view replays on the [SC2 AI Arena 24/7 livestream](https://www.twitch.tv/aiarenastream)
@@ -27,21 +31,30 @@ The Sc2AutoObserver is used to view replays on the [SC2 AI Arena 24/7 livestream
 ### Windows (Visual Studio)
 ```bat
 :: Clone the project.
-$ git clone --recursive git@gitlab.com:aiarena/sc2autoobserver.git
+$ git clone --recursive git@github.com:Nickrader/SC2AutoObserver.git
 $ cd sc2autoobserver
 
 :: Create build directory.
 $ mkdir build
 $ cd build
 
-:: Generate VS solution.
+:: Create Visual Studio project files.
+:: For Visual Studio 2022.
+$ cmake ../ -G "Visual Studio 17 2022"
+:: For Visual Studio 2019.
+$ cmake ../ -G "Visual Studio 16 2019"
+:: For Visual Studio 2017.
 $ cmake ../ -G "Visual Studio 15 2017 Win64"
 
 :: Build the project using Visual Studio.
 $ start Observer.sln
 
-:: Launch the observer.
-$ bin/Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
+:: Launch the observer. (based upon what you built in Visual Studio)
+:: e.g. bin\Debug\Observer.exe --Path "C:\Users\CoolUsername\Documents\StarCraft II\Accounts\84555555\1-S2-1-5555555\Replays\Multiplayer\Alcyone LE.SC2Replay" --Speed "0.25x"
+:: Release version
+$ bin/Release/Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
+:: Debug version
+$ bin/Debug/Observer.exe --Path "<Path to a single SC2 replay or directory with replay files>" --Speed <Replay speed>`
 ```
 
 ### OS X (Xcode)
